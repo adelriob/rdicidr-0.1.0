@@ -3,9 +3,15 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:16.13.2
+      - image: ubuntu-latest
     steps:
       - checkout
+      - run: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
       - run:
           name: Install Dependencies
           command: npm install
