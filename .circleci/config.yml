@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update NPM
-          command: "sudo npm install -g npm"
-      - run:
           name: Install Dependencies
           command: npm install
       - run:
