@@ -3,15 +3,9 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: ubuntu-latest
+      - image: actions/setup-node@v3
     steps:
       - checkout
-      - run: Setup NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
       - run:
           name: Install Dependencies
           command: npm install
@@ -36,3 +30,5 @@ workflows:
             branches:
               only:
                 - master
+
+
