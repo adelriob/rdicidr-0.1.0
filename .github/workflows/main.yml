@@ -29,6 +29,9 @@ jobs:
       - name: linter
         run: npm run lint
 
+      - name: Install npm v8
+        run: npm i -g npm@8
+        
       - name: Formatter
         run: npm run prettier
 
