@@ -21,6 +21,8 @@ jobs:
 
       # Install dependencies
       - name: install
+        run: npm remove --save node-sass
+        run: npm install --save node-sass
         run: npm install
 
       # Build the site
