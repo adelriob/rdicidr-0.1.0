@@ -33,7 +33,9 @@ jobs:
         run: npm i -g npm@8
         
       - name: Formatter
-        run: npm run prettier
+        run: |
+         npm install prettier
+         npm run prettier
 
       - name: Test
         run: npm run test
