@@ -26,6 +26,15 @@ jobs:
          npm install --save node-sass
          npm install
 
+      - name: linter
+        run: npm run lint
+
+      - name: Formatter
+        run: npm run prettier
+
+      - name: Test
+        run: npm run test
+
       # Build the site
       - name: Build
         run: npm run build
